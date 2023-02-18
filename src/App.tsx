@@ -45,7 +45,7 @@ export default function App() {
           <input type="submit" />
         </form>
       </div>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </>
   );
 }
