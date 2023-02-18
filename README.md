@@ -1,14 +1,19 @@
-# Vite + React
+# React Hook Form Sample
+This is a React Hook Form sample application for codesandbox.
 
-This is a [Vite](https://vitejs.dev) project together with React.
+https://react-hook-form.com
 
-[![Edit in CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/codesandbox/codesandbox-template-vite-react/main)
+# issue useFieldArray and useFormContext
+It did not work correctly when useFieldArray and useFormContext were used together.
 
-[Configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) has been added to optimize it for [CodeSandbox Projects](https://codesandbox.io/p/dashboard).
+Therefore, a sample application was created to verify this.
 
-## Resources
 
-- [CodeSandbox Projects — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
-- [Vite — GitHub](https://github.com/vitejs/vite)
-- [Vite — Docs](https://vitejs.dev/guide/)
+https://react-hook-form.com/api/usefieldarray
+https://react-hook-form.com/api/useformcontext
+
+https://github.com/YamabikoLab/react-hook-form-sample/issues/3
+
+# codesandbox share
+## useFieldArray example
+https://codesandbox.io/p/sandbox/react-hook-form-sample-fcss8b?file=%2Fsrc%2FApp.tsx
