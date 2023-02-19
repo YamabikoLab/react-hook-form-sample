@@ -1,16 +1,18 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+import React from "react";
 import { useForm, useFieldArray } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+// import { DevTool } from "@hookform/devtools";
 import SectionList from "./components/SectionList";
 
-export type FormValues = {
-  cart: {
+export interface FormValues {
+  cart: Array<{
     name: string;
     price: number;
     quantity: number;
-  }[];
-};
+  }>;
+}
 
-export default function App() {
+export default function App(): JSX.Element {
   const {
     register,
     control,
@@ -26,7 +28,8 @@ export default function App() {
     name: "cart",
     control,
   });
-  const onSubmit = (data: FormValues) => console.log(data);
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const onSubmit = (data: FormValues) => { console.log(data); };
 
   return (
     <>

@@ -1,12 +1,23 @@
+import React from "react";
+import {
+  type UseFieldArrayRemove,
+  type FieldErrors,
+  type UseFormRegister,
+  type Control,
+  type FieldArrayWithId,
+  type UseFieldArrayAppend,
+} from "react-hook-form";
+import { type FormValues } from "../App";
 import Section from "./Section";
 import Total from "./Total";
+
 interface SectionListProps {
-  register: any;
-  control: any;
-  errors: any;
-  fields: any[];
-  append: any;
-  remove: any;
+  register: UseFormRegister<FormValues>;
+  control: Control<FormValues, any>;
+  errors: FieldErrors<FormValues>;
+  fields: Array<FieldArrayWithId<FormValues, "cart", "id">>;
+  append: UseFieldArrayAppend<FormValues, "cart">;
+  remove: UseFieldArrayRemove;
 }
 
 const SectionList = ({
@@ -16,12 +27,13 @@ const SectionList = ({
   fields,
   append,
   remove,
-}: SectionListProps) => {
+}: SectionListProps): JSX.Element => {
   return (
     <>
       {fields.map((field, index) => {
         return (
           <Section
+            key={index}
             register={register}
             errors={errors}
             field={field}
@@ -35,13 +47,13 @@ const SectionList = ({
 
       <button
         type="button"
-        onClick={() =>
+        onClick={() => {
           append({
             name: "",
             quantity: 0,
             price: 0,
-          })
-        }
+          });
+        }}
       >
         APPEND
       </button>
