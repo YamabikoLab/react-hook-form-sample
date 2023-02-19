@@ -14,6 +14,21 @@ https://react-hook-form.com/api/useformcontext
 
 https://github.com/YamabikoLab/react-hook-form-sample/issues/3
 
+# Conclusion
+No problem.
+
+It works fine when useFieldArray and useFormContext are used together.
+
+
 # codesandbox share
 ## useFieldArray example
 https://codesandbox.io/p/sandbox/react-hook-form-sample-fcss8b?file=%2Fsrc%2FApp.tsx
+
+## before useFormContext
+https://codesandbox.io/p/sandbox/react-hook-form-sample-componentize-ljenes?file=%2Fsrc%2FApp.tsx
+
+## after useFormContext
+https://codesandbox.io/p/sandbox/react-hook-form-sample-useformcontext-vk5us9?file=%2Fsrc%2FApp.tsx
+
+# before,after diff
+https://github.com/YamabikoLab/react-hook-form-sample/pull/5/files

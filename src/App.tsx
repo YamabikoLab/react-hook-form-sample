@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+// import { DevTool } from "@hookform/devtools";
 import SectionList from "./components/SectionList";
 
 export interface FormValues {
