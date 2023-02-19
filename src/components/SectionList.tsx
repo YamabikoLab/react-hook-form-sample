@@ -18,7 +18,7 @@ const SectionList = (): JSX.Element => {
         );
       })}
 
-      <Total control={control} />
+      <Total />
 
       <button
         type="button"
