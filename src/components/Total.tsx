@@ -1,8 +1,9 @@
 import React from "react";
-import { type Control, useWatch } from "react-hook-form";
+import { useWatch, useFormContext } from "react-hook-form";
 import { type FormValues } from "../App";
 
-const Total = ({ control }: { control: Control<FormValues> }): JSX.Element => {
+const Total = (): JSX.Element => {
+  const { control } = useFormContext<FormValues>();
   const formValues = useWatch({
     name: "cart",
     control,

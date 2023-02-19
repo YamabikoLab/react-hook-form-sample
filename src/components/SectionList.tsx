@@ -1,45 +1,20 @@
 import React from "react";
-import {
-  type UseFieldArrayRemove,
-  type FieldErrors,
-  type UseFormRegister,
-  type Control,
-  type FieldArrayWithId,
-  type UseFieldArrayAppend,
-} from "react-hook-form";
+import { useFormContext, useFieldArray } from "react-hook-form";
 import { type FormValues } from "../App";
 import Section from "./Section";
 import Total from "./Total";
 
-interface SectionListProps {
-  register: UseFormRegister<FormValues>;
-  control: Control<FormValues, any>;
-  errors: FieldErrors<FormValues>;
-  fields: Array<FieldArrayWithId<FormValues, "cart", "id">>;
-  append: UseFieldArrayAppend<FormValues, "cart">;
-  remove: UseFieldArrayRemove;
-}
-
-const SectionList = ({
-  register,
-  control,
-  errors,
-  fields,
-  append,
-  remove,
-}: SectionListProps): JSX.Element => {
+const SectionList = (): JSX.Element => {
+  const { control } = useFormContext<FormValues>();
+  const { fields, append, remove } = useFieldArray({
+    name: "cart",
+    control,
+  });
   return (
     <>
       {fields.map((field, index) => {
         return (
-          <Section
-            key={index}
-            register={register}
-            errors={errors}
-            field={field}
-            index={index}
-            remove={remove}
-          />
+          <Section key={index} field={field} index={index} remove={remove} />
         );
       })}
 

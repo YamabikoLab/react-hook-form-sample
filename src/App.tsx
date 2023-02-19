@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from "react";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 // import { DevTool } from "@hookform/devtools";
 import SectionList from "./components/SectionList";
 
@@ -13,42 +13,30 @@ export interface FormValues {
 }
 
 export default function App(): JSX.Element {
-  const {
-    register,
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>({
+  const methods = useForm<FormValues>({
     defaultValues: {
       cart: [{ name: "test", quantity: 1, price: 23 }],
     },
     mode: "onBlur",
   });
-  const { fields, append, remove } = useFieldArray({
-    name: "cart",
-    control,
-  });
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const onSubmit = (data: FormValues) => { console.log(data); };
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+  };
 
   return (
     <>
       <div>
-        <h1>Componentize App</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <SectionList
-            register={register}
-            control={control}
-            errors={errors}
-            fields={fields}
-            append={append}
-            remove={remove}
-          />
+        <h1>useFormContext App</h1>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <SectionList />
 
-          <input type="submit" />
-        </form>
+            <input type="submit" />
+          </form>
+        </FormProvider>
       </div>
-      {/* <DevTool control={control} /> */}
+      {/* <DevTool control={methods.control} /> */}
     </>
   );
 }
