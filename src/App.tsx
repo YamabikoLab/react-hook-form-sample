@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
-// import { DevTool } from "@hookform/devtools";
+import { DevTool } from "@hookform/devtools";
 import SectionList from "./components/SectionList";
 
 export interface FormValues {
@@ -36,7 +36,7 @@ export default function App(): JSX.Element {
           </form>
         </FormProvider>
       </div>
-      {/* <DevTool control={control} /> */}
+      {/* <DevTool control={methods.control} /> */}
     </>
   );
 }
