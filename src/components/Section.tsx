@@ -1,27 +1,22 @@
 import React from "react";
 import {
+  useFormContext,
   type FieldArrayWithId,
-  type FieldErrors,
   type UseFieldArrayRemove,
-  type UseFormRegister,
 } from "react-hook-form";
 import { type FormValues } from "../App";
 
 interface SectionProps {
-  register: UseFormRegister<FormValues>;
-  errors: FieldErrors<FormValues>;
   field: FieldArrayWithId<FormValues, "cart", "id">;
   index: number;
   remove: UseFieldArrayRemove;
 }
 
-const Section = ({
-  register,
-  errors,
-  field,
-  index,
-  remove,
-}: SectionProps): JSX.Element => {
+const Section = ({ field, index, remove }: SectionProps): JSX.Element => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<FormValues>();
   return (
     <div key={field.id}>
       <section className={"section"} key={field.id}>
