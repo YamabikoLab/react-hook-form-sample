@@ -27,7 +27,7 @@ export default function App(): JSX.Element {
   return (
     <>
       <div>
-        <h1>useFormContext App</h1>
+        <h1>コンポーネント化した配列（バケツリレー解消タイプ）</h1>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
             <SectionList />

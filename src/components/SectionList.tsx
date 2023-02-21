@@ -30,7 +30,7 @@ const SectionList = (): JSX.Element => {
           });
         }}
       >
-        APPEND
+        追加
       </button>
     </>
   );

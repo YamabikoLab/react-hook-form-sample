@@ -51,7 +51,7 @@ const Section = ({ field, index, remove }: SectionProps): JSX.Element => {
             remove(index);
           }}
         >
-          DELETE
+          削除
         </button>
       </section>
     </div>
