@@ -56,7 +56,7 @@ const Section = ({
             remove(index);
           }}
         >
-          DELETE
+          削除
         </button>
       </section>
     </div>

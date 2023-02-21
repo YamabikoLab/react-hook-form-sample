@@ -55,7 +55,7 @@ const SectionList = ({
           });
         }}
       >
-        APPEND
+        追加
       </button>
     </>
   );

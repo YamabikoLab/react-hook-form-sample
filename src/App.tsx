@@ -34,7 +34,7 @@ export default function App(): JSX.Element {
   return (
     <>
       <div>
-        <h1>Componentize App</h1>
+        <h1>コンポーネント化した配列</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <SectionList
             register={register}

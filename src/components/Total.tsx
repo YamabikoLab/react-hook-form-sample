@@ -12,7 +12,7 @@ const Total = ({ control }: { control: Control<FormValues> }): JSX.Element => {
     (acc, current) => acc + (current.price || 0) * (current.quantity || 0),
     0
   );
-  return <p>Total Amount: {total}</p>;
+  return <p>合計: {total}</p>;
 };
 
 export default Total;
